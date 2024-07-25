@@ -1,0 +1,22 @@
+.btn {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background-color: RoyalBlue;
+  }
+  input[type=Next] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  input[type=Next]:hover {
+    background-color: #45a049;
+  }

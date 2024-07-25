@@ -1,0 +1,8 @@
+DATA STRUCTURES
+two types
+1.primitive-integer,float.....
+2.non primitive-linear and non linear
+(i)in linear we have static and dynamic
+(a)Static-arrays
+(b)Dynamic-linked,straped,cube.
+(ii)Non linear- we have trees and graphs.

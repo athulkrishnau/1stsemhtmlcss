@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PLOTS</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function searchLocations() {
+            const locations = ["Chennai", "Coimbatore", "Madurai", "Tiruchirappalli", "Salem", "Tiruppur", "Erode", "Vellore", "Thoothukudi", "Nagercoil"];
+            const searchQuery = document.querySelector('.srch').value.toLowerCase();
+            const results = locations.filter(location => location.toLowerCase().includes(searchQuery));
+            const resultsDiv = document.querySelector('.search-results');
+            resultsDiv.innerHTML = results.length ? results.join('<br>') : 'No results found';
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+
+        function validateForm() {
+            const email = document.querySelector('input[type="email"]').value;
+            const password = document.querySelector('input[type="password"]').value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address');
+                return false;
+            }
+
+            if (password.length < 6) {
+                alert('Password must be at least 6 characters long');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+    <style>
+        .search-results {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">PLOT GARDENS</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="Aboutus.html">ABOUT US</a></li>
+                    <li><a href="cityselect.html">RESIDENTIAL PLOTS</a></li>
+                    <li><a href="contacus.html">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder="SEARCH HERE">
+                <button class="btn" onclick="searchLocations()">Search</button>
+                <div class="search-results"></div>
+            </div>
+        </div> 
+        <div class="content">
+            <h1>Find New Plots <br><span>search your dream house</span> <br></h1><br><br>
+
+            <button class="cn"><a href="signin.html">JOIN US</a></button>
+
+            <div class="form">
+                <h2>Login Here</h2>
+                <input type="email" name="email" placeholder="Enter Email Here">
+                <input type="password" name="" placeholder="Enter Password Here"><br>
+                <button class="btnn" onclick="if(validateForm()) { location.href='cityselect.html'; }">Login</button>
+
+                <p class="link">Don't have an account<br>
+                <a href="signin.html">Sign up</a> here</a></p>
+                <p class="liw"></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
